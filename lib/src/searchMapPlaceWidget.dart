@@ -132,6 +132,13 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
   }
 
   @override
+  void setState(fn) {
+    if(mounted){
+      super.setState(fn);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) => Container(
         width: MediaQuery.of(context).size.width * 0.9,
         child: _searchContainer(
