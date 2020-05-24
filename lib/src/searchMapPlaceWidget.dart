@@ -200,6 +200,10 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
           if (widget.hasClearButton)
             GestureDetector(
               onTap: () {
+                if (_currentInput.length == 0) {
+                 _closeSearch();
+                 }
+
                 if (_crossFadeState == CrossFadeState.showSecond) _textEditingController.clear();
               },
               // child: Icon(_inputIcon, color: this.widget.iconColor),
